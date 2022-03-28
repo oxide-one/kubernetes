@@ -1,6 +1,6 @@
 resources:
   - ../../../components/netbox
-
+  - ingress.yaml
 secretGenerator:
 - name: netbox-secrets
   envs: [secret.env]

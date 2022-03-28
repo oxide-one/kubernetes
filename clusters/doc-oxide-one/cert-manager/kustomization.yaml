@@ -1,0 +1,5 @@
+resources:
+- issuer.yaml
+- issuer-staging.yaml
+
+namespace: cert-manager

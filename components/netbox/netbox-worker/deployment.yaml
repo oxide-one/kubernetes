@@ -14,8 +14,6 @@ spec:
         - /opt/netbox/netbox/manage.py
         - rqworker
         envFrom:
-        - configMapRef:
-            name: netbox-defaults-env
         - secretRef:
             name: netbox-secrets
       restartPolicy: Always
