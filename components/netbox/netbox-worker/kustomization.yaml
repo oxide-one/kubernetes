@@ -1,0 +1,8 @@
+resources:
+  - deployment.yaml
+
+labels:
+  - pairs:
+      component: worker
+      app: netbox
+    includeSelectors: true 

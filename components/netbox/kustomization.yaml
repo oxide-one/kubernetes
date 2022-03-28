@@ -1,0 +1,14 @@
+resources:
+  - netbox-web
+  - netbox-worker
+  - netbox-housekeeping
+  - namespace.yaml
+  
+images:
+- name: netbox
+  newName: ghcr.io/netbox-community/netbox:latest
+
+commonLabels:
+  app: netbox
+
+namespace: netbox

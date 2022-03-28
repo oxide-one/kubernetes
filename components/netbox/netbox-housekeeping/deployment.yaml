@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  netbox-housekeeping
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name:  netbox-housekeeping
+        image:  netbox
+        command:
+        - /opt/netbox/housekeeping.sh
+        envFrom:
+        - secretRef:
+            name: netbox-secrets
+      restartPolicy: Always

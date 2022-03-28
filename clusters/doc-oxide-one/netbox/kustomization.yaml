@@ -1,0 +1,9 @@
+resources:
+  - ../../../components/netbox
+
+secretGenerator:
+- name: netbox-secrets
+  envs: [secret.env]
+  behavior: create
+
+namespace: netbox

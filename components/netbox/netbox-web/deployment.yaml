@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  netbox-web
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name:  netbox-web
+        image:  netbox
+        envFrom:
+        - secretRef:
+            name: netbox-secrets
+        ports:
+        - containerPort:  8080
+          name:  http
+        livenessProbe:
+          tcpSocket:
+            port: http
+        readinessProbe:
+          tcpSocket:
+            port: http
+      restartPolicy: Always

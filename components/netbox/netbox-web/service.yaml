@@ -1,0 +1,9 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: netbox-web
+spec:
+  ports:
+  - name: http
+    port: 8080

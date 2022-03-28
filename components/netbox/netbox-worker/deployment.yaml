@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  netbox-worker
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name:  netbox-worker
+        image:  netbox
+        command:
+        - /opt/netbox/venv/bin/python
+        - /opt/netbox/netbox/manage.py
+        - rqworker
+        envFrom:
+        - configMapRef:
+            name: netbox-defaults-env
+        - secretRef:
+            name: netbox-secrets
+      restartPolicy: Always
