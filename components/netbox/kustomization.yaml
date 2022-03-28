@@ -6,7 +6,7 @@ resources:
   
 images:
 - name: netbox
-  newName: ghcr.io/netbox-community/netbox:latest
+  newName: ghcr.io/netbox-community/netbox:v3.1
 
 commonLabels:
   app: netbox
