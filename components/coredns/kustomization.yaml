@@ -1,0 +1,13 @@
+resources:
+  - deployment.yaml
+  - namespace.yaml
+  - service.yaml
+labels:
+  - pairs:
+      component: dns
+      app: coredns
+    includeSelectors: true 
+
+images:
+- name: coredns
+  newName: ghcr.io/oxide-one/coredns:latest

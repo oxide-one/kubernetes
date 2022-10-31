@@ -1,0 +1,8 @@
+resources:
+  - statefulset.yaml
+
+labels:
+  - pairs:
+      component: webui
+      app: netbox
+    includeSelectors: true 
